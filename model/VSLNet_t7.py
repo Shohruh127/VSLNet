@@ -1,9 +1,8 @@
 import torch
 import torch.nn as nn
 from model.layers_t7 import Embedding, VisualProjection, FeatureEncoder, CQAttention, CQConcatenate, \
-    ConditionedPredictor, HighLightLayer
+    ConditionedPredictor
 from transformers import AdamW, get_linear_schedule_with_warmup
-
 
 def build_optimizer_and_scheduler(model, configs):
     no_decay = ['bias', 'layer_norm', 'LayerNorm']  # no decay for parameters of layer norm and bias
